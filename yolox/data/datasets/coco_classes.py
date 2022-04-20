@@ -84,3 +84,5 @@ COCO_CLASSES = (
     "hair drier",
     "toothbrush",
 )
+
+COCO_CLASSES = ("LP",)
