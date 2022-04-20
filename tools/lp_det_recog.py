@@ -5,6 +5,7 @@
 import argparse
 import os
 import time
+from cv2 import imshow
 from loguru import logger
 
 import cv2
@@ -162,7 +163,7 @@ class Predictor(object):
 
 
         with torch.no_grad():
-            t0 = time.time()
+            # t0 = time.time()
             outputs = self.model(img)
             if self.decoder is not None:
                 outputs = self.decoder(outputs, dtype=outputs.type())
@@ -170,7 +171,7 @@ class Predictor(object):
                 outputs, self.num_classes, self.confthre,
                 self.nmsthre, class_agnostic=True
             )
-            logger.info("Infer time: {:.4f}s".format(time.time() - t0))
+            # logger.info("Infer time: {:.4f}s".format(time.time() - t0))
 
         return outputs, img_info
 
@@ -197,6 +198,18 @@ class Predictor(object):
             y1 = int(box[3])
 
         return img[y0:y1, x0:x1]
+
+    def get_bboxes_xyxy(self, output, img_info):
+        ratio = img_info["ratio"]
+    
+        output = output.cpu()
+
+        bboxes = output[:, 0:4]
+
+        # preprocessing: resize
+        bboxes /= ratio
+
+        return bboxes
 
 
 
@@ -263,28 +276,45 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
         )
     while True:
         ret_val, frame = cap.read()
+
+        # the line at which to run ocr
+        x_right = 1200
+        x_left = 600
+
+        cv2.line(frame, (x_right, 0), (x_right, int(height)), (0, 255, 0), 3)
+        cv2.line(frame, (x_left, 0), (x_left, int(height)), (0, 255, 0), 3)
+
+        
         if ret_val:
             t0 = time.time()
             outputs, img_info = predictor.inference(frame)
 
-            for output in outputs:
-                # Get the crop image of lp
-                lp_img = predictor.get_crop(output, img_info)
-
-                # Run OCR
-                result = mmocr.readtext(lp_img)
-
-                # print(result)
-                list_of_num_chars = result[0]['text']
-                # print(list_of_num_chars)
-                list_of_num_chars.reverse()
-                # print(list_of_num_chars)
-                plate_num = ""
-                plate_num = plate_num.join(list_of_num_chars).upper()
-                print(plate_num)
+            if outputs[0] is not None:
+                # print(outputs[0])
+                bboxes = predictor.get_bboxes_xyxy(outputs[0], img_info)
+                print(bboxes)
 
 
-                result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num)
+            if (bboxes[0][0] < x_right) and bboxes[0][0] > x_left: 
+                for output in outputs:
+                    # Get the crop image of lp
+                    lp_img = predictor.get_crop(output, img_info)
+
+                    # Run OCR
+                    result = mmocr.readtext(lp_img) # details=True
+
+                    # print(result)
+                    list_of_num_chars = result[0]['text']
+                    # print(list_of_num_chars)
+                    list_of_num_chars.reverse()
+                    # print(list_of_num_chars)
+                    plate_num = ""
+                    plate_num = plate_num.join(list_of_num_chars).upper()
+                    # print(plate_num)
+
+                    result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num)
+            else:
+                result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num="")
 
             if args.save_result:
                 vid_writer.write(result_frame)
