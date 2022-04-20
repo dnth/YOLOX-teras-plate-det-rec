@@ -267,22 +267,24 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
             t0 = time.time()
             outputs, img_info = predictor.inference(frame)
 
-            # Get the crop image of lp
-            lp_img = predictor.get_crop(outputs[0], img_info)
+            for output in outputs:
+                # Get the crop image of lp
+                lp_img = predictor.get_crop(output, img_info)
 
-            # Run OCR
-            result = mmocr.readtext(lp_img)
-            # print(result)
-            list_of_num_chars = result[0]['text']
-            # print(list_of_num_chars)
-            list_of_num_chars.reverse()
-            # print(list_of_num_chars)
-            plate_num = ""
-            plate_num = plate_num.join(list_of_num_chars).upper()
-            print(plate_num)
+                # Run OCR
+                result = mmocr.readtext(lp_img)
+
+                # print(result)
+                list_of_num_chars = result[0]['text']
+                # print(list_of_num_chars)
+                list_of_num_chars.reverse()
+                # print(list_of_num_chars)
+                plate_num = ""
+                plate_num = plate_num.join(list_of_num_chars).upper()
+                print(plate_num)
 
 
-            result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num)
+                result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num)
 
             if args.save_result:
                 vid_writer.write(result_frame)
