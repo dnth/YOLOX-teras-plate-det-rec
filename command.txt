@@ -6,3 +6,8 @@ python tools/lp_det_recog.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX
 python tools/train.py -f exps/example/custom/yolox_s_lp.py -b 8 --fp16 -o -c yolox_s.pth
 
 python tools/lp_det_recog.py webcam -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --device gpu --conf 0.7 --nms 0.45
+
+python tools/lp_det_recog.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/video-240-1080p_18_03_2020.mp4 --device gpu --conf 0.7 --nms 0.45 --tsize 640 
+
+
+python tools/lp_det_recog.py image -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/test_img.png --device gpu --conf 0.7 --nms 0.45 --tsize 640 

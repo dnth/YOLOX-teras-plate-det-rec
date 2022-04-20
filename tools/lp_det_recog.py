@@ -274,6 +274,8 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
         vid_writer = cv2.VideoWriter(
             save_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (int(width), int(height))
         )
+
+    fps = 0
     while True:
         ret_val, frame = cap.read()
 
@@ -284,35 +286,33 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
         cv2.line(frame, (x_right, 0), (x_right, int(height)), (0, 255, 0), 3)
         cv2.line(frame, (x_left, 0), (x_left, int(height)), (0, 255, 0), 3)
 
+        cv2.rectangle(frame, (0, 10), (150, 70), (0, 0, 255), -1)
+        cv2.putText(frame, f"FPS: {round(fps,1)}", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), thickness=2)
         
         if ret_val:
             t0 = time.time()
             outputs, img_info = predictor.inference(frame)
 
             if outputs[0] is not None:
-                # print(outputs[0])
                 bboxes = predictor.get_bboxes_xyxy(outputs[0], img_info)
-                print(bboxes)
+                # print(bboxes)
 
 
-            if (bboxes[0][0] < x_right) and bboxes[0][0] > x_left: 
-                for output in outputs:
-                    # Get the crop image of lp
-                    lp_img = predictor.get_crop(output, img_info)
+            if (bboxes[0][0] < x_right) and bboxes[0][0] > x_left:
+                lp_img = predictor.get_crop(outputs[0], img_info)
+                # Run OCR
+                result = mmocr.readtext(lp_img) # details=True
 
-                    # Run OCR
-                    result = mmocr.readtext(lp_img) # details=True
+                # print(result)
+                list_of_num_chars = result[0]['text']
+                # print(list_of_num_chars)
+                list_of_num_chars.reverse()
+                # print(list_of_num_chars)
+                plate_num = ""
+                plate_num = plate_num.join(list_of_num_chars).upper()
+                # print(plate_num)
 
-                    # print(result)
-                    list_of_num_chars = result[0]['text']
-                    # print(list_of_num_chars)
-                    list_of_num_chars.reverse()
-                    # print(list_of_num_chars)
-                    plate_num = ""
-                    plate_num = plate_num.join(list_of_num_chars).upper()
-                    # print(plate_num)
-
-                    result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num)
+                result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num)
             else:
                 result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num="")
 
@@ -328,7 +328,14 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
             if ch == 27 or ch == ord("q") or ch == ord("Q"):
                 break
             
-            logger.info("E2e inference time: {:.4f}s".format(time.time() - t0))
+            time_taken = time.time() - t0
+            fps = 1/time_taken
+            logger.info("E2E inference time: {:.4f}s".format(time_taken))
+            logger.info(f"FPS: {fps}")
+
+            
+
+
 
         else:
             break
