@@ -29,8 +29,11 @@ pip install openvino-dev[onnx]==2022.1.0
 #Convert into OpenVINO
 mo --input_model yolox_s_lp.onnx --input_shape [1,3,416,416] --data_type FP16
 
-# Inference with openvino
+# Inference with openvino FP16
 python tools/lp_det_ov.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/video-240-1080p_18_03_2020.mp4 --conf 0.7 --nms 0.45
+
+# Inference with quantized model
+python tools/lp_det_ov_quantized.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/video-240-1080p_18_03_2020.mp4 --conf 0.7 --nms 0.45
 
 # Post training optimization
 pot -q default -m yolox_s_lp.xml -w yolox_s_lp.bin --engine simplified --data-source pot_images/
