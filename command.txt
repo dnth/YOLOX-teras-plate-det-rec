@@ -1,3 +1,5 @@
+# Use alpr-teras conda env
+
 python tools/demo.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/video-240-1080p_18_03_2020.mp4 --device gpu --conf 0.7 --nms 0.45 --tsize 640 
 
 python tools/lp_det_recog.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/video-240-1080p_18_03_2020.mp4 --device gpu --conf 0.7 --nms 0.45 --tsize 640 
@@ -18,3 +20,17 @@ python tools/export_onnx.py --output-name yolox_s_lp.onnx -f exps/example/custom
 
 # ONNX Inference
 python demo/ONNXRuntime/onnx_inference.py -m yolox_s_lp.onnx -i YOLOX_inputs/test_img.png -o YOLOX_outputs/yolox_s_lp/ -s 0.3 --input_shape 640,640
+
+python tools/lp_det_onnx.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/video-240-1080p_18_03_2020.mp4 --device gpu --conf 0.7 --nms 0.45
+
+# Install OpenVINO
+pip install openvino-dev[onnx]==2022.1.0
+
+#Convert into OpenVINO
+mo --input_model yolox_s_lp.onnx --input_shape [1,3,416,416] --data_type FP16
+
+# Inference with openvino
+python tools/lp_det_ov.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/video-240-1080p_18_03_2020.mp4 --conf 0.7 --nms 0.45
+
+# Post training optimization
+pot -q default -m yolox_s_lp.xml -w yolox_s_lp.bin --engine simplified --data-source pot_images/

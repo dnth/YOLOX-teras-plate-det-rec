@@ -304,7 +304,7 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
             # outputs, img_info = predictor.inference(frame)
             # result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num="")
 
-            input_shape = (640,640)
+            input_shape = (416,416)
             img, ratio = preprocess(frame, input_shape)
             ort_inputs = {session.get_inputs()[0].name: img[None, :, :, :]}
             output = session.run(None, ort_inputs)

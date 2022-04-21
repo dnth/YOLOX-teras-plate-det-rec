@@ -1,0 +1,1175 @@
+<?xml version="1.0"?>
+<mapping>
+	<map>
+		<framework name="images" output_port_id="images" />
+		<IR name="images" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="467" output_port_id="467" />
+		<IR name="467" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="472" output_port_id="472" />
+		<IR name="472" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="487" output_port_id="487" />
+		<IR name="487" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="492" output_port_id="492" />
+		<IR name="492" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="477" output_port_id="477" />
+		<IR name="477" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="482" output_port_id="482" />
+		<IR name="482" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="497" output_port_id="497" />
+		<IR name="497" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="502" output_port_id="502" />
+		<IR name="502" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="503" output_port_id="503" />
+		<IR name="503" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="878" output_port_id="878" />
+		<IR name="878" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="877" output_port_id="877" />
+		<IR name="877" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="507" output_port_id="507" />
+		<IR name="507" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="881" output_port_id="881" />
+		<IR name="881" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="880" output_port_id="880" />
+		<IR name="880" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="511" output_port_id="511" />
+		<IR name="511" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="884" output_port_id="884" />
+		<IR name="884" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="883" output_port_id="883" />
+		<IR name="883" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="515" output_port_id="515" />
+		<IR name="515" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="890" output_port_id="890" />
+		<IR name="890" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="889" output_port_id="889" />
+		<IR name="889" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="523" output_port_id="523" />
+		<IR name="523" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="893" output_port_id="893" />
+		<IR name="893" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="892" output_port_id="892" />
+		<IR name="892" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="527" output_port_id="527" />
+		<IR name="527" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="528" output_port_id="528" />
+		<IR name="528" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="887" output_port_id="887" />
+		<IR name="887" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="886" output_port_id="886" />
+		<IR name="886" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="519" output_port_id="519" />
+		<IR name="519" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="529" output_port_id="529" />
+		<IR name="529" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="896" output_port_id="896" />
+		<IR name="896" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="895" output_port_id="895" />
+		<IR name="895" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="533" output_port_id="533" />
+		<IR name="533" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="899" output_port_id="899" />
+		<IR name="899" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="898" output_port_id="898" />
+		<IR name="898" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="537" output_port_id="537" />
+		<IR name="537" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="902" output_port_id="902" />
+		<IR name="902" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="901" output_port_id="901" />
+		<IR name="901" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="541" output_port_id="541" />
+		<IR name="541" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="908" output_port_id="908" />
+		<IR name="908" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="907" output_port_id="907" />
+		<IR name="907" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="549" output_port_id="549" />
+		<IR name="549" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="911" output_port_id="911" />
+		<IR name="911" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="910" output_port_id="910" />
+		<IR name="910" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="553" output_port_id="553" />
+		<IR name="553" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="554" output_port_id="554" />
+		<IR name="554" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="914" output_port_id="914" />
+		<IR name="914" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="913" output_port_id="913" />
+		<IR name="913" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="558" output_port_id="558" />
+		<IR name="558" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="917" output_port_id="917" />
+		<IR name="917" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="916" output_port_id="916" />
+		<IR name="916" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="562" output_port_id="562" />
+		<IR name="562" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="563" output_port_id="563" />
+		<IR name="563" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="920" output_port_id="920" />
+		<IR name="920" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="919" output_port_id="919" />
+		<IR name="919" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="567" output_port_id="567" />
+		<IR name="567" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="923" output_port_id="923" />
+		<IR name="923" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="922" output_port_id="922" />
+		<IR name="922" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="571" output_port_id="571" />
+		<IR name="571" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="572" output_port_id="572" />
+		<IR name="572" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="905" output_port_id="905" />
+		<IR name="905" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="904" output_port_id="904" />
+		<IR name="904" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="545" output_port_id="545" />
+		<IR name="545" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="573" output_port_id="573" />
+		<IR name="573" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="926" output_port_id="926" />
+		<IR name="926" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="925" output_port_id="925" />
+		<IR name="925" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="577" output_port_id="577" />
+		<IR name="577" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="929" output_port_id="929" />
+		<IR name="929" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="928" output_port_id="928" />
+		<IR name="928" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="581" output_port_id="581" />
+		<IR name="581" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="932" output_port_id="932" />
+		<IR name="932" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="931" output_port_id="931" />
+		<IR name="931" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="585" output_port_id="585" />
+		<IR name="585" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="938" output_port_id="938" />
+		<IR name="938" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="937" output_port_id="937" />
+		<IR name="937" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="593" output_port_id="593" />
+		<IR name="593" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="941" output_port_id="941" />
+		<IR name="941" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="940" output_port_id="940" />
+		<IR name="940" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="597" output_port_id="597" />
+		<IR name="597" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="598" output_port_id="598" />
+		<IR name="598" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="944" output_port_id="944" />
+		<IR name="944" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="943" output_port_id="943" />
+		<IR name="943" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="602" output_port_id="602" />
+		<IR name="602" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="947" output_port_id="947" />
+		<IR name="947" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="946" output_port_id="946" />
+		<IR name="946" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="606" output_port_id="606" />
+		<IR name="606" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="607" output_port_id="607" />
+		<IR name="607" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="950" output_port_id="950" />
+		<IR name="950" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="949" output_port_id="949" />
+		<IR name="949" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="611" output_port_id="611" />
+		<IR name="611" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="953" output_port_id="953" />
+		<IR name="953" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="952" output_port_id="952" />
+		<IR name="952" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="615" output_port_id="615" />
+		<IR name="615" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="616" output_port_id="616" />
+		<IR name="616" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="935" output_port_id="935" />
+		<IR name="935" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="934" output_port_id="934" />
+		<IR name="934" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="589" output_port_id="589" />
+		<IR name="589" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="617" output_port_id="617" />
+		<IR name="617" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="956" output_port_id="956" />
+		<IR name="956" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="955" output_port_id="955" />
+		<IR name="955" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="621" output_port_id="621" />
+		<IR name="621" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="959" output_port_id="959" />
+		<IR name="959" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="958" output_port_id="958" />
+		<IR name="958" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="625" output_port_id="625" />
+		<IR name="625" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="962" output_port_id="962" />
+		<IR name="962" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="961" output_port_id="961" />
+		<IR name="961" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="629" output_port_id="629" />
+		<IR name="629" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="630" output_port_id="630" />
+		<IR name="630" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="631" output_port_id="631" />
+		<IR name="631" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="632" output_port_id="632" />
+		<IR name="632" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="633" output_port_id="633" />
+		<IR name="633" output_port_id="4" />
+	</map>
+	<map>
+		<framework name="965" output_port_id="965" />
+		<IR name="965" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="964" output_port_id="964" />
+		<IR name="964" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="637" output_port_id="637" />
+		<IR name="637" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="968" output_port_id="968" />
+		<IR name="968" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="967" output_port_id="967" />
+		<IR name="967" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="641" output_port_id="641" />
+		<IR name="641" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="974" output_port_id="974" />
+		<IR name="974" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="973" output_port_id="973" />
+		<IR name="973" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="649" output_port_id="649" />
+		<IR name="649" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="977" output_port_id="977" />
+		<IR name="977" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="976" output_port_id="976" />
+		<IR name="976" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="653" output_port_id="653" />
+		<IR name="653" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="971" output_port_id="971" />
+		<IR name="971" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="970" output_port_id="970" />
+		<IR name="970" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="645" output_port_id="645" />
+		<IR name="645" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="654" output_port_id="654" />
+		<IR name="654" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="980" output_port_id="980" />
+		<IR name="980" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="979" output_port_id="979" />
+		<IR name="979" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="658" output_port_id="658" />
+		<IR name="658" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="983" output_port_id="983" />
+		<IR name="983" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="982" output_port_id="982" />
+		<IR name="982" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="662" output_port_id="662" />
+		<IR name="662" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1099" output_port_id="1099" />
+		<IR name="1099" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="667" output_port_id="667" />
+		<IR name="667" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="668" output_port_id="668" />
+		<IR name="668" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="986" output_port_id="986" />
+		<IR name="986" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="985" output_port_id="985" />
+		<IR name="985" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="672" output_port_id="672" />
+		<IR name="672" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="992" output_port_id="992" />
+		<IR name="992" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="991" output_port_id="991" />
+		<IR name="991" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="680" output_port_id="680" />
+		<IR name="680" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="995" output_port_id="995" />
+		<IR name="995" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="994" output_port_id="994" />
+		<IR name="994" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="684" output_port_id="684" />
+		<IR name="684" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="989" output_port_id="989" />
+		<IR name="989" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="988" output_port_id="988" />
+		<IR name="988" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="676" output_port_id="676" />
+		<IR name="676" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="685" output_port_id="685" />
+		<IR name="685" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="998" output_port_id="998" />
+		<IR name="998" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="997" output_port_id="997" />
+		<IR name="997" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="689" output_port_id="689" />
+		<IR name="689" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1001" output_port_id="1001" />
+		<IR name="1001" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1000" output_port_id="1000" />
+		<IR name="1000" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="693" output_port_id="693" />
+		<IR name="693" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="698" output_port_id="698" />
+		<IR name="698" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="699" output_port_id="699" />
+		<IR name="699" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="1004" output_port_id="1004" />
+		<IR name="1004" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1003" output_port_id="1003" />
+		<IR name="1003" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="703" output_port_id="703" />
+		<IR name="703" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1010" output_port_id="1010" />
+		<IR name="1010" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1009" output_port_id="1009" />
+		<IR name="1009" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="711" output_port_id="711" />
+		<IR name="711" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1013" output_port_id="1013" />
+		<IR name="1013" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1012" output_port_id="1012" />
+		<IR name="1012" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="715" output_port_id="715" />
+		<IR name="715" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1007" output_port_id="1007" />
+		<IR name="1007" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1006" output_port_id="1006" />
+		<IR name="1006" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="707" output_port_id="707" />
+		<IR name="707" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="716" output_port_id="716" />
+		<IR name="716" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="1016" output_port_id="1016" />
+		<IR name="1016" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1015" output_port_id="1015" />
+		<IR name="1015" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="720" output_port_id="720" />
+		<IR name="720" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1055" output_port_id="1055" />
+		<IR name="1055" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1054" output_port_id="1054" />
+		<IR name="1054" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="776" output_port_id="776" />
+		<IR name="776" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1064" output_port_id="1064" />
+		<IR name="1064" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1063" output_port_id="1063" />
+		<IR name="1063" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="789" output_port_id="789" />
+		<IR name="789" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1067" output_port_id="1067" />
+		<IR name="1067" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1066" output_port_id="1066" />
+		<IR name="1066" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="793" output_port_id="793" />
+		<IR name="793" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="head.reg_preds.0.weight" output_port_id="head.reg_preds.0.weight" />
+		<IR name="head.reg_preds.0.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="794" output_port_id="794" />
+		<IR name="794" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="head.obj_preds.0.weight" output_port_id="head.obj_preds.0.weight" />
+		<IR name="head.obj_preds.0.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="795" output_port_id="795" />
+		<IR name="795" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="796" output_port_id="796" />
+		<IR name="796" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1058" output_port_id="1058" />
+		<IR name="1058" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1057" output_port_id="1057" />
+		<IR name="1057" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="780" output_port_id="780" />
+		<IR name="780" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1061" output_port_id="1061" />
+		<IR name="1061" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1060" output_port_id="1060" />
+		<IR name="1060" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="784" output_port_id="784" />
+		<IR name="784" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="head.cls_preds.0.weight" output_port_id="head.cls_preds.0.weight" />
+		<IR name="head.cls_preds.0.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="785" output_port_id="785" />
+		<IR name="785" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="797" output_port_id="797" />
+		<IR name="797" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="798" output_port_id="798" />
+		<IR name="798" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="857" output_port_id="857" />
+		<IR name="857" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="858" output_port_id="858" />
+		<IR name="858" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="1019" output_port_id="1019" />
+		<IR name="1019" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1018" output_port_id="1018" />
+		<IR name="1018" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="724" output_port_id="724" />
+		<IR name="724" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="725" output_port_id="725" />
+		<IR name="725" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="1022" output_port_id="1022" />
+		<IR name="1022" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1021" output_port_id="1021" />
+		<IR name="1021" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="729" output_port_id="729" />
+		<IR name="729" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1028" output_port_id="1028" />
+		<IR name="1028" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1027" output_port_id="1027" />
+		<IR name="1027" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="737" output_port_id="737" />
+		<IR name="737" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1031" output_port_id="1031" />
+		<IR name="1031" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1030" output_port_id="1030" />
+		<IR name="1030" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="741" output_port_id="741" />
+		<IR name="741" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1025" output_port_id="1025" />
+		<IR name="1025" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1024" output_port_id="1024" />
+		<IR name="1024" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="733" output_port_id="733" />
+		<IR name="733" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="742" output_port_id="742" />
+		<IR name="742" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="1034" output_port_id="1034" />
+		<IR name="1034" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1033" output_port_id="1033" />
+		<IR name="1033" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="746" output_port_id="746" />
+		<IR name="746" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1070" output_port_id="1070" />
+		<IR name="1070" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1069" output_port_id="1069" />
+		<IR name="1069" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="802" output_port_id="802" />
+		<IR name="802" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1079" output_port_id="1079" />
+		<IR name="1079" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1078" output_port_id="1078" />
+		<IR name="1078" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="815" output_port_id="815" />
+		<IR name="815" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1082" output_port_id="1082" />
+		<IR name="1082" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1081" output_port_id="1081" />
+		<IR name="1081" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="819" output_port_id="819" />
+		<IR name="819" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="head.reg_preds.1.weight" output_port_id="head.reg_preds.1.weight" />
+		<IR name="head.reg_preds.1.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="820" output_port_id="820" />
+		<IR name="820" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="head.obj_preds.1.weight" output_port_id="head.obj_preds.1.weight" />
+		<IR name="head.obj_preds.1.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="821" output_port_id="821" />
+		<IR name="821" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="822" output_port_id="822" />
+		<IR name="822" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1073" output_port_id="1073" />
+		<IR name="1073" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1072" output_port_id="1072" />
+		<IR name="1072" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="806" output_port_id="806" />
+		<IR name="806" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1076" output_port_id="1076" />
+		<IR name="1076" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1075" output_port_id="1075" />
+		<IR name="1075" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="810" output_port_id="810" />
+		<IR name="810" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="head.cls_preds.1.weight" output_port_id="head.cls_preds.1.weight" />
+		<IR name="head.cls_preds.1.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="811" output_port_id="811" />
+		<IR name="811" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="823" output_port_id="823" />
+		<IR name="823" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="824" output_port_id="824" />
+		<IR name="824" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="865" output_port_id="865" />
+		<IR name="865" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="866" output_port_id="866" />
+		<IR name="866" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="1037" output_port_id="1037" />
+		<IR name="1037" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1036" output_port_id="1036" />
+		<IR name="1036" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="750" output_port_id="750" />
+		<IR name="750" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="751" output_port_id="751" />
+		<IR name="751" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="1040" output_port_id="1040" />
+		<IR name="1040" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1039" output_port_id="1039" />
+		<IR name="1039" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="755" output_port_id="755" />
+		<IR name="755" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1046" output_port_id="1046" />
+		<IR name="1046" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1045" output_port_id="1045" />
+		<IR name="1045" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="763" output_port_id="763" />
+		<IR name="763" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1049" output_port_id="1049" />
+		<IR name="1049" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1048" output_port_id="1048" />
+		<IR name="1048" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="767" output_port_id="767" />
+		<IR name="767" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1043" output_port_id="1043" />
+		<IR name="1043" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1042" output_port_id="1042" />
+		<IR name="1042" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="759" output_port_id="759" />
+		<IR name="759" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="768" output_port_id="768" />
+		<IR name="768" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="1052" output_port_id="1052" />
+		<IR name="1052" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1051" output_port_id="1051" />
+		<IR name="1051" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="772" output_port_id="772" />
+		<IR name="772" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1085" output_port_id="1085" />
+		<IR name="1085" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1084" output_port_id="1084" />
+		<IR name="1084" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="828" output_port_id="828" />
+		<IR name="828" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1094" output_port_id="1094" />
+		<IR name="1094" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1093" output_port_id="1093" />
+		<IR name="1093" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="841" output_port_id="841" />
+		<IR name="841" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1097" output_port_id="1097" />
+		<IR name="1097" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1096" output_port_id="1096" />
+		<IR name="1096" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="845" output_port_id="845" />
+		<IR name="845" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="head.reg_preds.2.weight" output_port_id="head.reg_preds.2.weight" />
+		<IR name="head.reg_preds.2.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="846" output_port_id="846" />
+		<IR name="846" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="head.obj_preds.2.weight" output_port_id="head.obj_preds.2.weight" />
+		<IR name="head.obj_preds.2.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="847" output_port_id="847" />
+		<IR name="847" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="848" output_port_id="848" />
+		<IR name="848" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1088" output_port_id="1088" />
+		<IR name="1088" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1087" output_port_id="1087" />
+		<IR name="1087" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="832" output_port_id="832" />
+		<IR name="832" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1091" output_port_id="1091" />
+		<IR name="1091" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="1090" output_port_id="1090" />
+		<IR name="1090" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="836" output_port_id="836" />
+		<IR name="836" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="head.cls_preds.2.weight" output_port_id="head.cls_preds.2.weight" />
+		<IR name="head.cls_preds.2.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="837" output_port_id="837" />
+		<IR name="837" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="849" output_port_id="849" />
+		<IR name="849" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="850" output_port_id="850" />
+		<IR name="850" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="873" output_port_id="873" />
+		<IR name="873" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="874" output_port_id="874" />
+		<IR name="874" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="875" output_port_id="875" />
+		<IR name="875" output_port_id="3" />
+	</map>
+	<map>
+		<framework name="output" output_port_id="output" />
+		<IR name="output" output_port_id="2" />
+	</map>
+</mapping>
