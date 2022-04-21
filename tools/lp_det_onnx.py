@@ -4,6 +4,7 @@
 
 import argparse
 import os
+import secrets
 import time
 from cv2 import imshow
 from loguru import logger
@@ -21,9 +22,14 @@ from yolox.utils.visualize import vis_plate
 IMAGE_EXT = [".jpg", ".jpeg", ".webp", ".bmp", ".png"]
 
 
+from yolox.data.data_augment import preproc as preprocess
+from yolox.utils import mkdir, multiclass_nms, demo_postprocess
+import onnxruntime
+session = onnxruntime.InferenceSession("yolox_s_lp.onnx")
+print(session.get_providers())
 
-from mmocr.utils.ocr import MMOCR
-mmocr = MMOCR(det='FCE_CTW_DCNv2', recog='ABINet')
+# from mmocr.utils.ocr import MMOCR
+# mmocr = MMOCR(det='FCE_CTW_DCNv2', recog='ABINet')
 
 def make_parser():
     parser = argparse.ArgumentParser("YOLOX Demo!")
@@ -275,56 +281,60 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
             save_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (int(width), int(height))
         )
 
+
+
     fps = 0
     while True:
         ret_val, frame = cap.read()
 
         # the line at which to run ocr
-        x_right = 1200
-        x_left = 600
+        # x_right = 1200
+        # x_left = 600
 
-        cv2.line(frame, (x_right, 0), (x_right, int(height)), (0, 255, 0), 3)
-        cv2.line(frame, (x_left, 0), (x_left, int(height)), (0, 255, 0), 3)
+        # cv2.line(frame, (x_right, 0), (x_right, int(height)), (0, 255, 0), 3)
+        # cv2.line(frame, (x_left, 0), (x_left, int(height)), (0, 255, 0), 3)
 
+        # FPS Info
         cv2.rectangle(frame, (0, 10), (150, 70), (0, 0, 255), -1)
         cv2.putText(frame, f"FPS: {round(fps,1)}", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), thickness=2)
         
         if ret_val:
             t0 = time.time()
-            outputs, img_info = predictor.inference(frame)
 
-            if outputs[0] is not None:
-                bboxes = predictor.get_bboxes_xyxy(outputs[0], img_info)
-                # print(bboxes)
+            # outputs, img_info = predictor.inference(frame)
+            # result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num="")
 
+            input_shape = (640,640)
+            img, ratio = preprocess(frame, input_shape)
+            ort_inputs = {session.get_inputs()[0].name: img[None, :, :, :]}
+            output = session.run(None, ort_inputs)
+            predictions = demo_postprocess(output[0], input_shape, p6=False)[0]
 
-            if (bboxes[0][0] < x_right) and bboxes[0][0] > x_left:
-                lp_img = predictor.get_crop(outputs[0], img_info)
+            boxes = predictions[:, :4]
+            scores = predictions[:, 4:5] * predictions[:, 5:]
 
-                # Run OCR
-                result = mmocr.readtext(lp_img) # details=True
+            boxes_xyxy = np.ones_like(boxes)
+            boxes_xyxy[:, 0] = boxes[:, 0] - boxes[:, 2]/2.
+            boxes_xyxy[:, 1] = boxes[:, 1] - boxes[:, 3]/2.
+            boxes_xyxy[:, 2] = boxes[:, 0] + boxes[:, 2]/2.
+            boxes_xyxy[:, 3] = boxes[:, 1] + boxes[:, 3]/2.
+            boxes_xyxy /= ratio
+            dets = multiclass_nms(boxes_xyxy, scores, nms_thr=0.45, score_thr=0.1)
 
-                # print(result)
-                list_of_num_chars = result[0]['text']
-                # print(list_of_num_chars)
-                list_of_num_chars.reverse()
-                # print(list_of_num_chars)
-                plate_num = ""
-                plate_num = plate_num.join(list_of_num_chars).upper()
-                # print(plate_num)
+            if dets is not None:
+                final_boxes, final_scores, final_cls_inds = dets[:, :4], dets[:, 4], dets[:, 5]
+                frame = vis(frame, final_boxes, final_scores, final_cls_inds,
+                                conf=0.3, class_names=COCO_CLASSES)
 
-                result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num)
-            else:
-                result_frame = predictor.visual(outputs[0], img_info, predictor.confthre, plate_num="")
 
             if args.save_result:
-                vid_writer.write(result_frame)
+                vid_writer.write(frame)
             else:
                 cv2.namedWindow("yolox", cv2.WINDOW_NORMAL)
-                cv2.imshow("yolox", result_frame)
+                cv2.imshow("yolox", frame)
 
-                cv2.namedWindow("plate", cv2.WINDOW_NORMAL)
-                cv2.imshow("plate", lp_img)
+                # cv2.namedWindow("plate", cv2.WINDOW_NORMAL)
+                # cv2.imshow("plate", lp_img)
             ch = cv2.waitKey(1)
             if ch == 27 or ch == ord("q") or ch == ord("Q"):
                 break

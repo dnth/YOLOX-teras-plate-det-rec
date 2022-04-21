@@ -11,3 +11,10 @@ python tools/lp_det_recog.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX
 
 
 python tools/lp_det_recog.py image -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/test_img.png --device gpu --conf 0.7 --nms 0.45 --tsize 640 
+
+
+# Convert to ONNX 
+python tools/export_onnx.py --output-name yolox_s_lp.onnx -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth 
+
+# ONNX Inference
+python demo/ONNXRuntime/onnx_inference.py -m yolox_s_lp.onnx -i YOLOX_inputs/test_img.png -o YOLOX_outputs/yolox_s_lp/ -s 0.3 --input_shape 640,640
