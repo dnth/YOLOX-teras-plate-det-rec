@@ -4,9 +4,9 @@
 
 import argparse
 import os
-import secrets
+
 import time
-from cv2 import imshow
+
 from loguru import logger
 
 import cv2
@@ -16,8 +16,8 @@ import torch
 from yolox.data.data_augment import ValTransform
 from yolox.data.datasets import COCO_CLASSES
 from yolox.exp import get_exp
-from yolox.utils import fuse_model, get_model_info, postprocess, vis
-from yolox.utils.visualize import vis_plate
+from yolox.utils import fuse_model, get_model_info, postprocess
+# from yolox.utils.visualize import vis
 
 IMAGE_EXT = [".jpg", ".jpeg", ".webp", ".bmp", ".png"]
 
@@ -274,6 +274,39 @@ def image_demo(predictor, vis_folder, path, current_time, save_result):
         if ch == 27 or ch == ord("q") or ch == ord("Q"):
             break
 
+def vis(img, boxes, scores, cls_ids, conf=0.5, class_names=None):
+
+    for i in range(len(boxes)):
+        box = boxes[i]
+        cls_id = int(cls_ids[i])
+        score = scores[i]
+        if score < conf:
+            continue
+        x0 = int(box[0])
+        y0 = int(box[1])
+        x1 = int(box[2])
+        y1 = int(box[3])
+
+        color = (0, 0, 255) #(_COLORS[cls_id] * 255).astype(np.uint8).tolist()
+        text = '{}:{:.1f}%'.format(class_names[cls_id], score * 100)
+        txt_color = (255, 255, 255) # if np.mean(_COLORS[cls_id]) > 0.5 else (255, 255, 255)
+        font = cv2.FONT_HERSHEY_SIMPLEX
+
+        txt_size = cv2.getTextSize(text, font, 0.4, 1)[0]
+        cv2.rectangle(img, (x0, y0), (x1, y1), color, 2)
+
+        txt_bk_color = (0, 0, 255) # (_COLORS[cls_id] * 255 * 0.7).astype(np.uint8).tolist()
+        cv2.rectangle(
+            img,
+            (x0, y0 + 1),
+            (x0 + txt_size[0] + 90, y0 - int(3.7*txt_size[1])),
+            txt_bk_color,
+            -1
+        )
+        cv2.putText(img, text, (x0, y0 - txt_size[1]), font, 1.0, txt_color, thickness=2)
+
+    return img
+
 
 def imageflow_demo(predictor, vis_folder, current_time, args):
     cap = cv2.VideoCapture(args.path if args.demo == "video" else args.camid)
@@ -308,8 +341,8 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
         # cv2.line(frame, (x_left, 0), (x_left, int(height)), (0, 255, 0), 3)
 
         # FPS Info
-        cv2.rectangle(frame, (0, 10), (150, 70), (0, 0, 255), -1)
-        cv2.putText(frame, f"FPS: {round(fps,1)}", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), thickness=2)
+        cv2.rectangle(frame, (1400, 100), (1900, 10), (0, 0, 255), -1)
+        cv2.putText(frame, f"FPS: {round(fps,1)}", (1400, 90), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 255, 255), thickness=2)
         
         if ret_val:
             t0 = time.time()
@@ -338,7 +371,7 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
                 final_boxes = dets[:, :4]
                 final_scores, final_cls_inds = dets[:, 4], dets[:, 5]
                 frame = vis(frame, final_boxes, final_scores, final_cls_inds,
-                                conf=0.3, class_names=COCO_CLASSES)
+                                conf=0.5, class_names=COCO_CLASSES)
 
 
             if args.save_result:
