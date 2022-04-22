@@ -37,3 +37,6 @@ python tools/lp_det_ov_quantized.py video -f exps/example/custom/yolox_s_lp.py -
 
 # Post training optimization
 pot -q default -m yolox_s_lp.xml -w yolox_s_lp.bin --engine simplified --data-source pot_images/
+
+# Inference 
+python tools/lp_det_ov_quantized_paddleocr.py video -f exps/example/custom/yolox_s_lp.py -c YOLOX_outputs/yolox_s_lp/best_ckpt.pth --path YOLOX_inputs/video-240-1080p_18_03_2020.mp4 --conf 0.7 --nms 0.45

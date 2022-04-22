@@ -27,8 +27,15 @@ from openvino.inference_engine import IECore
 ie = IECore()
 net = ie.read_network(model="results/model_name_DefaultQuantization/2022-04-21_18-41-55/optimized/model_name.xml")
 
-import easyocr
-reader = easyocr.Reader(['en'], gpu=True) # this needs to run only once to load the model into memory
+from paddleocr import PaddleOCR,draw_ocr
+# Paddleocr supports Chinese, English, French, German, Korean and Japanese.
+# You can set the parameter `lang` as `ch`, `en`, `fr`, `german`, `korean`, `japan`
+# to switch the language model in order.
+ocr = PaddleOCR(use_angle_cls=False, lang='en') # need to run only once to download and load model into memory
+
+
+# import easyocr
+# reader = easyocr.Reader(['en'], gpu=True) # this needs to run only once to load the model into memory
 
 
 # ---------------------------Step 3. Configure input & output----------------------------------------------------------
@@ -397,15 +404,21 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
 
                 # Run ocr
                 if lp_img.any(): # check if array empty
-                    result = reader.readtext(lp_img, blocklist="-_")
+
+                    result = ocr.ocr(lp_img, cls=True)
+                    # result = reader.readtext(lp_img, blocklist="-_")
                 
                     if result:
+                        # print(result)
                         plate_num = ""
-                        for text in result:
-                            # print(text[-2])
-                            plate_num += text[-2]
+                        for item in result:
+                            # print(item[-1][0])
+                            plate_num += item[-1][0]
+
+
                             plate_num = plate_num.upper()
                             plate_num = plate_num.replace(" ", "")
+                            plate_num = plate_num.replace("-", "")
 
                     print(plate_num)
 

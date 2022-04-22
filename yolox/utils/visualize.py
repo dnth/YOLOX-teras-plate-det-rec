@@ -37,7 +37,7 @@ def vis_plate(img, boxes, scores, cls_ids, conf=0.5, class_names=None, plate_num
             txt_bk_color,
             -1
         )
-        cv2.putText(img, text, (x0, y0 - txt_size[1]), font, 0.8, txt_color, thickness=2)
+        cv2.putText(img, text, (x0, y0 - txt_size[1]), font, 1.5, txt_color, thickness=2)
         
 
     return img
